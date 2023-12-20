@@ -9,14 +9,30 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("data")
 public class RecordModel {
 
-    @Id
     private String id, name, notes;
+    // id,
 
     private int age;
 
-    public RecordModel(String id, int age, String name, String notes){
+   /* public RecordModel(int age, String name, String notes){
+        super();
+    }*/
+
+    public RecordModel(String id, String name, String notes, int age) {
         super();
         this.id = id;
+        this.name = name;
+        this.notes = notes;
+        this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "RecordModel{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", notes='" + notes + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
